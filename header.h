@@ -12,10 +12,8 @@
 #include <iomanip>  /* setw          */
 #include <string>   /* string        */
 #include <stdlib.h> /* srand rand    */
-
-
+#include <vector>
+#include <list>
 using namespace std;
-
-
 
 #endif /* HEADER_H_ */

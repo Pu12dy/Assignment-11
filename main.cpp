@@ -6,6 +6,7 @@
  * DUE DATE      : 11/16/2020
  *****************************************************************************/
 #include "header.h"
+#include "AdjListGraph.h"
 /******************************************************************************
  * Assignment 11 - DFS & BFS
  * Part A -
@@ -76,6 +77,23 @@ int main(){
 	/**************************************************************************
 	 *  END OF HEADER OUTPUT
 	 *************************************************************************/
+
+	/**************************************************************************
+	 * Creating a List of City Names from provided data
+	 *************************************************************************/
+	vector<string> cityNames;
+	cityNames.push_back("Atlanta");
+	cityNames.push_back("Boston");
+	cityNames.push_back("Chicago");
+	cityNames.push_back("Dallas");
+	cityNames.push_back("Denver");
+	cityNames.push_back("Houston");
+	cityNames.push_back("Kansas");
+	cityNames.push_back("Los Angeles");
+	cityNames.push_back("Miami");
+	cityNames.push_back("San Francisco");
+	cityNames.push_back("Seattle");
+
 
 	/**************************************************************************
 	 * PART A
