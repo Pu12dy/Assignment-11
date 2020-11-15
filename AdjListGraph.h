@@ -9,14 +9,40 @@
 #define ADJLISTGRAPH_H_
 #include "header.h"
 
+struct Node{
+	// int = index, string = city name
+//	pair<int,string> name;
+	int index;
+	string name;
+	// miles apart
+	int weight;
+	Node* next;
+
+	Node(){
+		next = nullptr;
+		weight = 0;
+		index = 0;
+		name = "Default";
+	}
+	Node(int i, string n){
+		name = n;
+		index = i;
+		weight = 0;
+		next = nullptr;
+	}
+};
+
 class AdjListGraph {
 private:
 	int numVert;
 	int size;
-	pair<int, string> vertex;
-	list <int>* adjList;
+	vector<Node> adjList;
+	int mileCount;
+	vector<pair<string, string>> discoveryEdges;
+	vector<pair<string, string>> backEdges;
+
 	// A recursive function used by DFS
-	void DFShelper(string vert, bool visisted[]);
+	void DFShelper(int vert, bool visisted[]);
 
 public:
 	// Default Constructor
@@ -26,11 +52,16 @@ public:
 	// Returns true if AdjList is full
 	bool isFull();
 	// adds Vertex to AdjList
-	void addVertex(pair<int, string>);
+	void addVertex(int index, string name);
 	// The functions adds a edge to the AdjList
-	void addEdge(string vert, int weight);
+	void addEdge(int originIndex, int destIndex, string destName, int miles);
 	//DFS traversal of the vertices reachable from v
 	void DFS(string vert);
+	void printVert(int i);
+	void printVertEdges(int i);
+	int getMiles();
+	void printDiscoveryEdges();
+	void printBackEdges();
 
 };
 
